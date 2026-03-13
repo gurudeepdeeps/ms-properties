@@ -98,3 +98,7 @@ The contact forms are configured to send emails using EmailJS. To finish the liv
 ## ©️ License
 
 &copy; 2026 M S Properties. All rights reserved. Designed by **Xpensive Media**.
+
+
+
+continue editing from Projects page
