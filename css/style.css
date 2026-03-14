@@ -1449,15 +1449,91 @@ img {
   }
 
   .facilities-grid {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .facility-item {
+    flex: 1;
+    min-width: 0; /* Allow shrinking */
+  }
+
+  .facility-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+  }
+
+  .facility-icon i {
+    font-size: 1.5rem;
+  }
+
+  .facility-item h3 {
+    font-size: 0.8rem;
+    white-space: nowrap;
+  }
+
+  .facility-item p {
+    display: none; /* Hide descriptions to save space on mobile */
   }
 
   .why-brc-cards {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .why-brc-card {
+    flex: 1;
+    min-width: 0;
+    padding: 15px 5px;
+  }
+
+  .why-brc-card .card-icon,
+  .why-brc-card .card-icon i {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+  }
+
+  .why-brc-card h3 {
+    font-size: 0.65rem;
+    line-height: 1.2;
+  }
+
+  .why-brc-card p {
+    display: none;
   }
 
   .counters-grid {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .counter-item {
+    flex: 1;
+    min-width: 0;
+    padding: 10px 5px;
+  }
+
+  .counter-item .counter-icon,
+  .counter-item .counter-icon i {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+  }
+
+  .counter-item .counter-number {
+    font-size: 1.5rem;
+    margin-bottom: 2px;
+  }
+
+  .counter-item .counter-label {
+    font-size: 0.7rem;
+    line-height: 1.2;
   }
 
   .footer-grid {
