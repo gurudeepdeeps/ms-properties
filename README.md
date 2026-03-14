@@ -31,11 +31,10 @@ ms-properties/
 ├── testimonials.html     # Client Reviews
 │
 ├── projects/             # Individual Project Pages
-│   ├── green-town.html
+│   ├── lake-view.html
 │   ├── hoysala-nagara.html
-│   ├── nandi-greens.html
-│   ├── new-bangalore.html
-│   └── smart-town.html
+│   ├── orchids.html
+│   └── vistara.html
 │
 ├── css/
 │   └── style.css         # Global Stylesheet

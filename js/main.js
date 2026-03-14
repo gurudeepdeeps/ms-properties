@@ -143,6 +143,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // ---- Hero Slideshow ----
+  const heroSlides = document.querySelectorAll('.hero-bg');
+  let currentSlide = 0;
+
+  if (heroSlides.length > 0) {
+    setInterval(() => {
+      heroSlides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide + 1) % heroSlides.length;
+      heroSlides[currentSlide].classList.add('active');
+    }, 5000); // Change image every 5 seconds
+  }
+
   // ---- Form Submit Handlers ----
   document.querySelectorAll('form').forEach(form => {
     form.addEventListener('submit', (e) => {

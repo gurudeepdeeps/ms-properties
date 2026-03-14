@@ -253,15 +253,32 @@ img {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background: url('../images/hero-bg.png') center/cover no-repeat;
   padding-top: 85px;
+  overflow: hidden;
 }
 
-.hero::before {
-  content: '';
+.hero-bg {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out, transform 8s linear;
+  z-index: 0;
+  transform: scale(1);
+}
+
+.hero-bg.active {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
 }
 
 .hero .container {
