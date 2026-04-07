@@ -38,12 +38,12 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ---- Mobile Dropdown Toggle ----
-  document.querySelectorAll('.nav-dropdown > a').forEach(trigger => {
-    trigger.addEventListener('click', (e) => {
-      if (window.innerWidth <= 1024) {
-        e.preventDefault();
-        trigger.parentElement.classList.toggle('open');
-      }
+  document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+    toggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const parent = toggle.parentElement.parentElement; // .nav-dropdown
+      parent.classList.toggle('open');
     });
   });
 
