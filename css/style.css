@@ -1127,6 +1127,15 @@ img {
   margin-bottom: 30px;
 }
 
+.founder-photo {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid var(--gold-light);
+  margin: 0 auto 20px;
+}
+
 .director-card h3 {
   font-family: var(--font-heading);
   font-size: 1.3rem;
