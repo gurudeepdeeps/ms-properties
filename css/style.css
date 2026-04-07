@@ -345,6 +345,7 @@ img {
 
 .hero-form {
   background: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 12px;
@@ -1613,6 +1614,118 @@ img {
   color: var(--gold);
 }
 
+.hero-slide-1 {
+  background-image: url('../images/hero-slide-1.jpg');
+}
+
+.hero-slide-2 {
+  background-image: url('../images/hero-slide-2.jpg');
+}
+
+.hero-slide-3 {
+  background-image: url('../images/hero-slide-3.jpg');
+}
+
+.img-rounded-shadow {
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+.section-title-left {
+  text-align: left;
+}
+
+.section-title-medium {
+  font-size: 1.5rem;
+  margin-bottom: 25px;
+}
+
+.section-title-margin-20 {
+  margin-bottom: 20px;
+}
+
+.section-title-tight {
+  margin-bottom: 10px;
+}
+
+.section-title-white {
+  color: var(--white);
+}
+
+.director-card-wrap {
+  max-width: 600px;
+  margin: 40px auto 0;
+}
+
+.section-light-bg {
+  background: var(--light-bg);
+}
+
+.feature-grid-spaced {
+  margin-top: 40px;
+}
+
+.project-location {
+  color: var(--gold);
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.facilities-grid-four {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.projects-no-top-padding {
+  padding-top: 0;
+}
+
+.heading-top-gap {
+  margin-top: 40px;
+}
+
+.policy-container {
+  max-width: 900px;
+}
+
+.policy-content-body {
+  color: var(--text-medium);
+  line-height: 1.8;
+}
+
+.policy-heading {
+  color: var(--gold);
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+.policy-list {
+  margin-left: 20px;
+  list-style-type: disc;
+  margin-bottom: 15px;
+}
+
+.testimonials-spaced {
+  padding: 80px 0;
+}
+
+.testimonials-grid-spaced {
+  margin-top: 50px;
+}
+
+.textarea-tall {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.btn-full-width {
+  width: 100%;
+}
+
+.contact-address-note {
+  font-size: 0.85rem;
+  color: var(--text-medium);
+}
+
 .mt-20 {
   margin-top: 20px;
 }
@@ -1623,6 +1736,10 @@ img {
 
 .mb-20 {
   margin-bottom: 20px;
+}
+
+.mb-30 {
+  margin-bottom: 30px;
 }
 
 .mb-40 {
