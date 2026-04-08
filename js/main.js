@@ -155,7 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 5000); // Change image every 5 seconds
   }
 
-  // ---- Form Submit Handlers ----
+  // ---- Form Submit Handlers (Web3Forms) ----
   document.querySelectorAll('form').forEach(form => {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
@@ -166,18 +166,29 @@ document.addEventListener('DOMContentLoaded', () => {
         btn.textContent = 'Sending...';
         btn.disabled = true;
 
-        emailjs.sendForm('service_25042003', 'template_msproperties', form)
-          .then(() => {
-            btn.textContent = 'Sent Successfully!';
-            btn.style.background = '#27ae60';
+        const formData = new FormData(form);
 
-            setTimeout(() => {
-              btn.textContent = originalText;
-              btn.style.background = '';
-              btn.disabled = false;
-              form.reset();
-            }, 3000);
-          }, (error) => {
+        fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          body: formData
+        })
+          .then(response => response.json())
+          .then(data => {
+            if (data.success) {
+              btn.textContent = 'Sent Successfully!';
+              btn.style.background = '#27ae60';
+
+              setTimeout(() => {
+                btn.textContent = originalText;
+                btn.style.background = '';
+                btn.disabled = false;
+                form.reset();
+              }, 3000);
+            } else {
+              throw new Error('Form submission failed');
+            }
+          })
+          .catch((error) => {
             console.log('FAILED...', error);
             btn.textContent = 'Failed to Send';
             btn.style.background = '#e74c3c';

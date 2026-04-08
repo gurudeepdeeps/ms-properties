@@ -104,13 +104,15 @@
       <div class="contact-grid">
         <div class="contact-form-wrap animate-on-scroll">
           <form>
-            <div class="form-group"><label>Your Name</label><input type="text" placeholder="Enter your name" required>
+            <input type="hidden" name="access_key" value="656d3a51-6672-4212-a44f-787c1377d301">
+            <input type="hidden" name="email" value="yogesht722@gmail.com">
+            <div class="form-group"><label>Your Name</label><input type="text" name="name" placeholder="Enter your name" required>
             </div>
-            <div class="form-group"><label>Your Email</label><input type="email" placeholder="Enter your email"
+            <div class="form-group"><label>Your Email</label><input type="email" name="email_sender" placeholder="Enter your email"
                 required></div>
-            <div class="form-group"><label>Phone Number</label><input type="tel" placeholder="Enter your phone number"
+            <div class="form-group"><label>Phone Number</label><input type="tel" name="phone" placeholder="Enter your phone number"
                 required></div>
-            <div class="form-group"><label>Your Message</label><textarea placeholder="I'm interested in Sri Sai Ram Layout..."
+            <div class="form-group"><label>Your Message</label><textarea name="message" placeholder="I'm interested in Sri Sai Ram Layout..."
                 rows="4"></textarea></div>
             <button type="submit" class="btn btn-gold">Submit Enquiry</button>
           </form>
