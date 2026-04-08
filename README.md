@@ -1,103 +1,208 @@
-# 🏡 M S Properties - Corporate Website
+# M S Properties Website
 
-[![Website Status](https://img.shields.io/badge/Status-Active-success.svg)](https://github.com/gurudeepdeeps/ms-properties)
-[![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)](#)
-[![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)](#)
-[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)](#)
+Production-ready static marketing website for M S Properties, built with HTML, CSS, and vanilla JavaScript.
 
-A modern, fully responsive corporate website built for **M S Properties**, one of the top real estate companies in Bangalore. The website is designed to showcase the company's premium residential plots, highlight their expertise, feature client testimonials, and capture new leads through integrated contact forms.
+## Live Website
 
----
+https://ms-properties.vercel.app/
 
-## ✨ Key Features
+## Overview
 
-- **📱 Fully Responsive Design**: Optimized for seamless viewing across desktops, tablets, and mobile devices.
-- **🎨 Modern UI/UX**: Clean aesthetics with a professional navy blue and gold color scheme (`#1a2a3a` & `#d4af37`).
-- **🚀 Performance Optimized**: Lightweight vanilla HTML, CSS, and JS architecture for blazing-fast load times.
-- **✉️ Working Contact Forms**: Integrated with [EmailJS](https://www.emailjs.com/) to capture leads directly to the support inbox without requiring a backend server.
-- **🗺️ Interactive Maps**: Embedded Google Maps for easy location tracking of the main office.
-- **⚡ Smooth Animations**: Scroll-triggered reveal animations utilizing the `IntersectionObserver` API.
+This project is a multi-page real estate website focused on:
 
-## 📂 Project Structure
+- company credibility and brand presentation
+- project discovery and lead generation
+- social preview compatibility for shared links
+- lightweight performance and low maintenance hosting
+
+The site is hosted on Vercel and includes SEO/social metadata, crawler files, and cache/security headers.
+
+## Tech Stack
+
+- HTML5 (semantic page structure)
+- CSS3 (custom design system in a single stylesheet)
+- Vanilla JavaScript (navigation, animations, counters, forms)
+- EmailJS browser SDK (form submissions)
+- Font Awesome (icons)
+
+## Current Pages
+
+- Home: index.html
+- About: about.html
+- Projects list: projects.html
+- Project detail: balaji-layout.html
+- Project detail: sri-ram-layout.html
+- Investments: investments.html
+- Testimonials: testimonials.html
+- Gallery: gallery.html
+- Contact: contact.html
+- Privacy policy: privacy-policy.html
+
+## Project Structure
 
 ```text
-ms-properties/
-├── index.html            # Main Landing Page
-├── about.html            # Company Information & Directors
-├── contact.html          # Contact Page with Form & Map
-├── gallery.html          # Image Gallery
-├── investments.html      # Investment Opportunities
-├── projects.html         # Main Projects Listing Page
-├── testimonials.html     # Client Reviews
-│
-├── projects/             # Individual Project Pages
-│   ├── lake-view.html
-│   ├── hoysala-nagara.html
-│   ├── orchids.html
-│   └── vistara.html
-│
-├── css/
-│   └── style.css         # Global Stylesheet
-│
-├── js/
-│   └── main.js           # Core Interactions & EmailJS Logic
-│
-└── images/               # Project Assets & Logos
+YG/
+|-- index.html
+|-- about.html
+|-- projects.html
+|-- balaji-layout.html
+|-- sri-ram-layout.html
+|-- investments.html
+|-- testimonials.html
+|-- gallery.html
+|-- contact.html
+|-- privacy-policy.html
+|-- robots.txt
+|-- sitemap.xml
+|-- vercel.json
+|-- css/
+|   `-- style.css
+|-- js/
+|   `-- main.js
+`-- images/
 ```
 
-## 🛠️ Built With
+## Key Features
 
-- **HTML5**: Semantic markup for structure and SEO optimization.
-- **CSS3**: Custom styling, CSS root variables for theming, Flexbox/Grid for layouts, and media queries for responsiveness.
-- **JavaScript (ES6+)**: Vanilla JS for DOM manipulation, mobile menu toggling, smooth scrolling, and form handling.
-- **[FontAwesome](https://fontawesome.com/)**: For scalable vector icons.
-- **[EmailJS](https://www.emailjs.com/)**: Client-side email delivery system for contact forms.
+- responsive navigation with mobile hamburger menu
+- active link highlighting based on current page
+- hero background slideshow on homepage
+- scroll reveal animations via IntersectionObserver
+- animated counters for stats section
+- reusable form submission handling using EmailJS
+- social metadata for WhatsApp/Facebook/Twitter previews
+- crawler support through robots and sitemap
+- production headers/caching through Vercel config
 
-## 🚀 Getting Started Locally
+## JavaScript Behavior Summary
 
-To run this project on your local machine, follow these simple steps:
+Main logic lives in js/main.js:
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/gurudeepdeeps/ms-properties.git
-   ```
+- sticky header state on scroll
+- mobile menu toggle and auto-close on link click
+- dropdown toggle support for mobile nav
+- active nav highlighting by pathname
+- on-scroll animation triggers
+- counter animation with easing
+- smooth scrolling for hash links
+- hero image slider (5s interval)
+- generic form submit flow with loading/success/error states
 
-2. **Navigate to the directory:**
-   ```bash
-   cd ms-properties
-   ```
+## Form Integration (EmailJS)
 
-3. **Serve the files:**
-   Since this is a static website, you can serve it using any local server.
-   *Using Node/npx:*
-   ```bash
-   npx serve .
-   ```
-   *Using Python:*
-   ```bash
-   python -m http.server 3000
-   ```
+Forms submit through EmailJS in the browser.
 
-4. **View in browser:**
-   Open `http://localhost:3000` in your web browser.
+Current references:
 
-## 📧 EmailJS Setup (Contact Forms)
+- emailjs.sendForm('service_25042003', 'template_msproperties', form) in js/main.js
+- EmailJS script + init in index.html and contact.html
 
-The contact forms are configured to send emails using EmailJS. To finish the live setup:
-1. Create a free account at [EmailJS](https://www.emailjs.com/).
-2. Add a new **Email Service** (e.g., Gmail) to get your `Service ID`.
-3. Create an **Email Template** using the variables `{{user_name}}`, `{{user_email}}`, `{{user_phone}}`, and `{{{message}}}`. Get your `Template ID`.
-4. Go to **Account > API Keys** to get your `Public Key`.
-5. Open `js/main.js` and update the IDs on line ~156:
-   ```javascript
-   emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form)
-   ```
-6. Open `index.html` and `contact.html`, and update your public key in the script tags at the bottom of the files.
+### Recommended setup process
 
-## ©️ License
+1. Create or verify EmailJS service.
+2. Create template with fields:
+   - user_name
+   - user_email
+   - user_phone
+   - message
+3. Confirm public key in the EmailJS init blocks.
+4. Send test submissions from Home and Contact pages.
 
-&copy; 2026 M S Properties. All rights reserved. Designed by **Xpensive Media**.
+## SEO and Social Sharing
 
+The pages include:
 
+- canonical URL
+- robots directive
+- Open Graph (og:title, og:description, og:image, og:url)
+- Twitter card metadata
 
-continue editing from Projects page
+Support files:
+
+- robots.txt
+- sitemap.xml
+
+If preview thumbnails are stale in messaging apps:
+
+1. Redeploy the latest version.
+2. Re-scrape URL in Facebook Sharing Debugger.
+3. Share the URL again.
+
+## Deployment (Vercel)
+
+vercel.json is configured for:
+
+- security headers:
+  - X-Content-Type-Options
+  - X-Frame-Options
+  - Referrer-Policy
+  - Permissions-Policy
+- caching strategy:
+  - short cache for HTML (must-revalidate)
+  - longer cache for /images, /css, /js
+
+### Deploy steps
+
+1. Push code to GitHub.
+2. Import repository into Vercel (or trigger existing project deployment).
+3. Confirm production domain points to latest deployment.
+
+## Local Development
+
+### Option 1: Node
+
+```bash
+npx serve .
+```
+
+### Option 2: Python
+
+```bash
+python -m http.server 3000
+```
+
+Then open the local URL in browser.
+
+## Design and Theming Notes
+
+- Global design tokens and component styles are in css/style.css
+- Update colors and typography from the root variables first
+- Reuse existing utility classes for spacing and typography consistency
+
+## Editing Guidelines for Future Updates
+
+- Keep filenames stable if they are referenced in metadata/sitemap.
+- Add new page URL to sitemap.xml when introducing pages.
+- Ensure social tags use absolute URLs for images.
+- Keep forms aligned with EmailJS template fields.
+
+## Quality Checklist Before Release
+
+- [ ] all page links work
+- [ ] mobile menu and dropdowns function correctly
+- [ ] form submit success and failure states appear correctly
+- [ ] metadata appears in page source
+- [ ] sitemap and robots are accessible in production
+- [ ] major pages tested on mobile and desktop
+
+## Known Limitations
+
+- no backend validation layer (EmailJS client-side only)
+- no automated test suite in current static setup
+- cache busting is manual because assets are not fingerprinted
+
+## Suggested Next Improvements
+
+1. Add build step with asset hashing for stronger long-term caching.
+2. Move EmailJS IDs and public key into environment-injected templates.
+3. Add Lighthouse CI and basic link-check workflow in GitHub Actions.
+4. Add analytics/event tracking for lead funnel conversion.
+
+## Ownership
+
+Client: M S Properties  
+Project type: Static marketing website
+
+## License
+
+Copyright (c) 2026 M S Properties. All rights reserved.
