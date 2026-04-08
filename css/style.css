@@ -909,6 +909,31 @@ img {
   border: none;
 }
 
+.contact-map .branch-map {
+  display: block;
+  width: 100%;
+  height: auto;
+  min-height: 300px;
+  border: none;
+}
+
+.map-office-name {
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  text-align: center;
+  background: #f7f9fc;
+  border-bottom: 1px solid #d5dbe3;
+  padding: 8px 10px;
+}
+
+.contact-map .branch-map + .branch-map {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #d5dbe3;
+}
+
 /* Contact Info Cards */
 .contact-info-cards {
   display: grid;
@@ -1733,6 +1758,33 @@ img {
 .contact-address-note {
   font-size: 0.85rem;
   color: var(--text-medium);
+  list-style: disc;
+  list-style-position: outside;
+  text-align: left;
+  display: inline-block;
+  padding-left: 18px;
+  margin-top: 6px;
+}
+
+.contact-address-note li {
+  margin-bottom: 4px;
+}
+
+.contact-address-note li + li {
+  margin-top: 10px;
+  padding-top: 10px;
+  position: relative;
+}
+
+.contact-address-note li + li::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 1px;
+  background: #d5dbe3;
 }
 
 .mt-20 {
